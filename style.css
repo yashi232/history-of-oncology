@@ -1,164 +1,184 @@
-/* Modern Editorial Color Palette */
+/* Academic & Medical Editorial Styling */
 :root {
-  --primary: #0f766e;       /* Minted Hygiene */
-  --primary-dark: #115e59;  /* Darker teal for hover */
-  --accent: #e11d48;        /* Warm crimson/coral highlight */
-  --bg-page: #f0fdfa;       /* Very soft mint-tinted background */
-  --bg-card: #ffffff;       /* Crisp white reading container */
-  --text-main: #1e293b;     /* Deep slate text */
-  --text-muted: #64748b;    /* Soft gray-blue metadata */
+  --navy: #0f172a;          /* Deep authoritative ink navy */
+  --slate: #334155;         /* Refined charcoal body text */
+  --muted: #64748b;         /* Subtle academic gray */
+  --gold: #9a3412;          /* Understated rust/amber editorial accent */
+  --border: #e2e8f0;        /* Crisp hairline divider */
+  --surface: #f8fafc;       /* Subtle off-white tint for quotes/cards */
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.8;
-  color: var(--text-main);
-  background: linear-gradient(180deg, #ccfbf1 0%, #f8fafc 350px);
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 2rem 1.25rem;
+  color: var(--slate);
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Top Navigation Bar */
+/* Full-width dark editorial top bar */
 nav {
+  background-color: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  padding: 1.1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 nav .logo {
-  font-weight: 800;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
-  letter-spacing: -0.02em;
 }
 
 nav a {
-  color: #ccfbf1;
+  color: #cbd5e1;
   text-decoration: none;
-  margin-left: 1.25rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: color 0.2s;
+  margin-left: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease;
 }
 
 nav a:hover {
   color: #ffffff;
 }
 
-/* Main White Content Sheet */
-header, main, article {
-  background-color: var(--bg-card);
-  padding: 2rem 2.25rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
-  margin-bottom: 1.5rem;
+/* Centered single-column reading layout */
+header, main, article, footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 header {
-  border-top: 5px solid var(--accent);
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #0f172a;
-  line-height: 1.25;
+article {
+  padding-top: 3rem;
 }
 
+/* Editorial Typography */
 h1 {
-  font-size: 2.2rem;
-  margin-top: 0;
-  margin-bottom: 0.6rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2.35rem;
+  line-height: 1.2;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.85rem 0;
 }
 
 h2 {
-  font-size: 1.4rem;
-  margin-top: 2.5rem;
-  color: var(--primary-dark);
-  border-left: 4px solid var(--accent);
-  padding-left: 0.85rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
 }
 
-/* Metadata & Colored Pill Tags */
+p {
+  margin-bottom: 1.35rem;
+  font-size: 1.08rem;
+}
+
+/* Byline & Metadata */
 .meta {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--text-muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--muted);
   font-size: 0.88rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* Clean Journal Index Rows (No bubbly cards) */
+.post-card {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .post-card .meta {
-  display: inline-block;
-  background-color: #ffe4e6;
-  color: var(--accent);
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  margin-bottom: 0.75rem;
-}
-
-/* Article Cards on Homepage */
-.post-card {
-  padding: 1.5rem;
-  margin: 1.25rem 0;
-  border: 1px solid #e2e8f0;
-  border-left: 5px solid var(--primary);
-  border-radius: 10px;
-  background-color: #f8fafc;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.12);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
 }
 
 .post-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
   margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
+  line-height: 1.3;
 }
 
 .post-card a {
   text-decoration: none;
-  color: #0f172a;
+  color: var(--navy);
+  transition: color 0.15s ease;
 }
 
 .post-card a:hover {
-  color: var(--primary);
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-/* Highlighted Blockquote for Case 45 */
+.post-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--slate);
+}
+
+/* Primary Source Blockquote (Case 45) */
 blockquote {
-  background: linear-gradient(90deg, #f0fdfa 0%, #ffffff 100%);
-  border-left: 4px solid var(--primary);
-  border-radius: 0 8px 8px 0;
-  margin: 1.75rem 0;
-  padding: 1.25rem 1.5rem;
+  background-color: var(--surface);
+  border-left: 3px solid var(--navy);
+  margin: 2rem 0;
+  padding: 1.25rem 1.75rem;
   font-style: italic;
-  color: #134e4a;
+  color: #1e293b;
 }
 
-/* Links inside articles */
-article a, main a {
-  color: var(--primary);
-  font-weight: 600;
+/* References List */
+ul {
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--slate);
 }
 
-/* Footer */
+li {
+  margin-bottom: 0.65rem;
+}
+
+/* Institutional Footer */
 footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  margin-top: 4.5rem;
+  padding-top: 1.75rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--border);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
