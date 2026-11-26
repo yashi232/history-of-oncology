@@ -181,4 +181,68 @@ footer {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.82rem;
   color: var(--muted);
+/* Two-column layout: Left Article + Right Sidebar */
+.page-grid {
+  display: flex;
+  gap: 3.5rem;
+  max-width: 1120px;
+  padding: 2.5rem 3rem;
+  align-items: flex-start;
 }
+
+.main-column {
+  flex: 1;
+  max-width: 720px;
+}
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--navy);
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.sidebar h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar p, .sidebar li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--slate);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--gold);
+}
+
+/* Stack cleanly on mobile screens */
+@media (max-width: 850px) {
+  .page-grid {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+}}
